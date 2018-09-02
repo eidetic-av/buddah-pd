@@ -1,15 +1,19 @@
 #N canvas 536 202 450 461 10;
 #X obj 28 75 vsl 60 60 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 4260 1;
+-1 -1 5044 1;
 #X floatatom 54 51 5 0 0 0 - - -, f 5;
 #X obj 28 300 netsend -u -b;
 #X msg 43 257 connect localhost 8000;
-#X obj 28 163 r beatramp 1;
-#X text 37 183 ^ outputs OSC at /beatramp;
 #X obj 28 24 beatramp;
 #X obj 43 233 loadbang;
+#X obj 28 163 r beatramp;
+#X obj 28 51 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 122 163 r beatramp/reset;
 #X connect 3 0 2 0;
-#X connect 4 0 2 0;
-#X connect 6 0 0 0;
-#X connect 6 1 1 0;
-#X connect 7 0 3 0;
+#X connect 4 0 7 0;
+#X connect 4 1 0 0;
+#X connect 4 2 1 0;
+#X connect 5 0 3 0;
+#X connect 6 0 2 0;
+#X connect 8 0 2 0;
