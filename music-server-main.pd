@@ -1,6 +1,6 @@
-#N canvas 174 208 632 347 10;
+#N canvas 174 208 950 478 10;
 #X obj 28 75 vsl 60 60 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1593 1;
+-1 -1 0 1;
 #X floatatom 54 51 5 0 0 0 - - -, f 5;
 #X obj 28 300 netsend -u -b;
 #X msg 43 257 connect localhost 8000;
@@ -11,7 +11,7 @@
 #X obj 122 163 r beatramp/reset;
 #X obj 129 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 294 68 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 294 68 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 129 26 kick-onset-detector 45 1;
 #X text 328 57 second argument is how many beats to wait before we

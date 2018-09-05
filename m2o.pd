@@ -1,0 +1,12 @@
+#N canvas 894 139 450 300 10;
+#X obj 61 56 watch \$1;
+#X obj 61 243 outlet;
+#X obj 61 177 list prepend send;
+#X obj 61 204 list trim;
+#X msg 62 93 1;
+#X obj 61 129 oscformat \$2;
+#X connect 0 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 2 0;

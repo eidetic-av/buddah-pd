@@ -1,0 +1,10 @@
+#N canvas 916 88 450 300 10;
+#X obj 37 27 ctlin \$1;
+#X obj 37 189 outlet;
+#X obj 37 123 list prepend send;
+#X obj 37 150 list trim;
+#X obj 37 75 oscformat \$2;
+#X connect 0 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 2 0;
