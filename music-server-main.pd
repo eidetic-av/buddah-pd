@@ -1,6 +1,6 @@
 #N canvas 529 247 750 478 10;
 #X obj 18 75 vsl 60 60 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 4047 1;
+-1 -1 2289 1;
 #X floatatom 54 51 5 0 0 0 - - -, f 5;
 #X obj 33 213 r beatramp;
 #X obj 28 51 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -8,9 +8,8 @@
 #X obj 137 223 r beatramp/reset;
 #X obj 129 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 294 68 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 294 68 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 129 26 kick-onset-detector 45 1;
 #X obj 387 223 r breakdown;
 #X obj 505 225 r kick;
 #X obj 37 234 spigot;
@@ -21,14 +20,14 @@
 1;
 #X obj 120 362 s osc-clients;
 #X obj 421 250 spigot;
-#X obj 472 224 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 472 224 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 504 251 spigot;
 #X obj 555 225 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 28 24 beatramp;
 #X obj 89 75 vsl 15 60 0 1 0 0 empty barramp-raw empty 0 -9 0 10 -262144
--1 -1 4032 1;
+-1 -1 620 1;
 #X obj 276 231 r barramp;
 #X obj 277 252 spigot;
 #X obj 346 232 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
@@ -41,7 +40,7 @@
 #X msg 83 167 connect 10.0.0.8 8000;
 #X obj 94 273 spigot;
 #X obj 137 247 tgl 15 0 empty empty auto_reconnect 17 7 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 81 237 sel 0;
 #X obj 288 210 netsend -u -b;
 #X obj 303 93 loadbang;
@@ -75,23 +74,25 @@
 #X restore 635 25 pd clients;
 #X obj 111 123 bng 15 250 50 0 reset-bar empty reset_bar 17 7 0 10
 -262144 -1 -1;
-#X connect 2 0 10 0;
-#X connect 4 0 12 0;
-#X connect 7 0 5 0;
-#X connect 7 1 6 0;
-#X connect 8 0 15 0;
-#X connect 9 0 17 0;
-#X connect 10 0 14 0;
-#X connect 11 0 10 1;
-#X connect 12 0 14 0;
-#X connect 13 0 12 1;
-#X connect 15 0 14 0;
-#X connect 16 0 15 1;
-#X connect 17 0 14 0;
-#X connect 18 0 17 1;
-#X connect 19 0 3 0;
-#X connect 19 1 0 0;
-#X connect 19 2 1 0;
-#X connect 21 0 22 0;
-#X connect 22 0 14 0;
-#X connect 23 0 22 1;
+#X text 314 26 < threshold \, wait-beats for breakdown;
+#X obj 129 26 kick-onset-detector 32 1;
+#X connect 2 0 9 0;
+#X connect 4 0 11 0;
+#X connect 7 0 14 0;
+#X connect 8 0 16 0;
+#X connect 9 0 13 0;
+#X connect 10 0 9 1;
+#X connect 11 0 13 0;
+#X connect 12 0 11 1;
+#X connect 14 0 13 0;
+#X connect 15 0 14 1;
+#X connect 16 0 13 0;
+#X connect 17 0 16 1;
+#X connect 18 0 3 0;
+#X connect 18 1 0 0;
+#X connect 18 2 1 0;
+#X connect 20 0 21 0;
+#X connect 21 0 13 0;
+#X connect 22 0 21 1;
+#X connect 27 0 5 0;
+#X connect 27 1 6 0;
