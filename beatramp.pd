@@ -57,6 +57,8 @@
 #X obj 287 628 list trim;
 #X obj 287 575 oscformat barramp;
 #X obj 322 524 s barramp-raw;
+#X obj 495 623 r reset-bar;
+#X msg 501 656 0;
 #X connect 0 0 6 0;
 #X connect 0 0 42 0;
 #X connect 1 0 13 0;
@@ -115,3 +117,7 @@
 #X connect 50 0 51 0;
 #X connect 51 0 34 0;
 #X connect 52 0 50 0;
+#X connect 54 0 55 0;
+#X connect 55 0 37 0;
+#X connect 55 0 43 0;
+#X connect 55 0 41 0;
