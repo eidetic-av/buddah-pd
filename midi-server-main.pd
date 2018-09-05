@@ -4,11 +4,17 @@
 #X msg 567 100 disconnect;
 #X obj 550 163 sel 0;
 #X obj 550 141 tgl 15 0 empty empty auto_reconnect 17 7 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 41 65 tanzmaus2osc;
 #X obj 326 163 netsend -u -b;
 #X obj 211 58 bsp2osc;
-#X obj 292 75 s;
+#X obj 45 222 op2osc;
+#X text 43 176 Outgoing:;
+#X obj 47 284 ortho2osc 1 17;
+#X obj 45 260 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 44 202 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
 #X connect 0 0 1 0;
 #X connect 1 0 6 0;
 #X connect 2 0 6 0;
@@ -16,3 +22,5 @@
 #X connect 4 0 1 0;
 #X connect 5 0 6 0;
 #X connect 7 0 6 0;
+#X connect 11 0 10 0;
+#X connect 12 0 8 0;
