@@ -1,22 +1,22 @@
 #N canvas 529 247 750 478 10;
 #X obj 18 75 vsl 60 60 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2289 1;
+-1 -1 4779 1;
 #X floatatom 54 51 5 0 0 0 - - -, f 5;
 #X obj 33 213 r beatramp;
 #X obj 28 51 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 137 223 r beatramp/reset;
-#X obj 129 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 249 93 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 294 68 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 393 94 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 387 223 r breakdown;
 #X obj 505 225 r kick;
 #X obj 37 234 spigot;
-#X obj 110 214 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 110 214 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 137 244 spigot;
-#X obj 253 224 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 253 224 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 120 362 s osc-clients;
 #X obj 421 250 spigot;
@@ -27,7 +27,7 @@
 1;
 #X obj 28 24 beatramp;
 #X obj 89 75 vsl 15 60 0 1 0 0 empty barramp-raw empty 0 -9 0 10 -262144
--1 -1 620 1;
+-1 -1 1261 1;
 #X obj 276 231 r barramp;
 #X obj 277 252 spigot;
 #X obj 346 232 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
@@ -46,7 +46,7 @@
 #X obj 303 93 loadbang;
 #X obj 314 273 spigot;
 #X obj 357 247 tgl 15 0 empty empty auto_reconnect 17 7 0 10 -262144
--1 -1 0 1;
+-1 -1 1 1;
 #X obj 301 237 sel 0;
 #X obj 69 39 r osc-clients;
 #X msg 303 167 connect localhost 8000;
@@ -74,8 +74,15 @@
 #X restore 635 25 pd clients;
 #X obj 111 123 bng 15 250 50 0 reset-bar empty reset_bar 17 7 0 10
 -262144 -1 -1;
-#X text 314 26 < threshold \, wait-beats for breakdown;
-#X obj 129 26 kick-onset-detector 32 1;
+#X obj 249 56 kick-onset-detector 1;
+#X obj 252 37 hsl 150 15 0 50 0 0 empty empty empty -2 -8 0 10 -204800
+-1 -1 5631 1;
+#X obj 415 3 loadbang;
+#X msg 415 20 50;
+#X obj 465 109 ortho-receive;
+#X obj 465 133 * 50;
+#X obj 252 18 hsl 150 15 0 50 0 0 empty kick-onset-level empty -2 -8
+0 10 -204786 -258113 -1 4108 1;
 #X connect 2 0 9 0;
 #X connect 4 0 11 0;
 #X connect 7 0 14 0;
@@ -94,5 +101,10 @@
 #X connect 20 0 21 0;
 #X connect 21 0 13 0;
 #X connect 22 0 21 1;
-#X connect 27 0 5 0;
-#X connect 27 1 6 0;
+#X connect 26 0 5 0;
+#X connect 26 1 6 0;
+#X connect 27 0 26 0;
+#X connect 28 0 29 0;
+#X connect 29 0 27 0;
+#X connect 30 0 31 0;
+#X connect 31 0 27 0;
