@@ -8,13 +8,14 @@
 #X obj 41 65 tanzmaus2osc;
 #X obj 326 163 netsend -u -b;
 #X obj 211 58 bsp2osc;
-#X obj 45 222 op2osc;
 #X text 43 176 Outgoing:;
-#X obj 47 284 ortho2osc 1 17;
-#X obj 45 260 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 45 260 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 44 202 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 44 202 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
+#X obj 236 265 ctlin;
+#X obj 47 284 ortho2osc 1 1;
+#X obj 45 222 op2osc 63;
 #X connect 0 0 1 0;
 #X connect 1 0 6 0;
 #X connect 2 0 6 0;
@@ -22,5 +23,5 @@
 #X connect 4 0 1 0;
 #X connect 5 0 6 0;
 #X connect 7 0 6 0;
-#X connect 11 0 10 0;
-#X connect 12 0 8 0;
+#X connect 9 0 12 0;
+#X connect 10 0 13 0;
