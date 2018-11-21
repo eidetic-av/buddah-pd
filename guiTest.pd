@@ -1,0 +1,4 @@
+#N canvas 284 432 452 300 10;
+#X obj 22 34 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X coords 0 -1 1 1 110 137 1 14 13;

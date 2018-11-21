@@ -1,6 +1,6 @@
 #N canvas 529 247 750 478 10;
 #X obj 18 75 vsl 60 60 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 4779 1;
+-1 -1 4248 1;
 #X floatatom 54 51 5 0 0 0 - - -, f 5;
 #X obj 33 213 r beatramp;
 #X obj 28 51 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -8,7 +8,7 @@
 #X obj 137 223 r beatramp/reset;
 #X obj 249 93 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 393 94 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 393 94 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 387 223 r breakdown;
 #X obj 505 225 r kick;
@@ -27,20 +27,20 @@
 1;
 #X obj 28 24 beatramp;
 #X obj 89 75 vsl 15 60 0 1 0 0 empty barramp-raw empty 0 -9 0 10 -262144
--1 -1 1261 1;
+-1 -1 2587 1;
 #X obj 276 231 r barramp;
 #X obj 277 252 spigot;
 #X obj 346 232 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 628 15 cnv 15 100 60 empty empty empty 20 12 0 14 -261234 -66577
 0;
-#N canvas 1034 137 599 383 clients 1;
+#N canvas 451 137 1182 383 clients 1;
 #X obj 68 210 netsend -u -b;
 #X obj 83 92 loadbang;
 #X msg 83 167 connect 10.0.0.8 8000;
 #X obj 94 273 spigot;
 #X obj 137 247 tgl 15 0 empty empty auto_reconnect 17 7 0 10 -262144
--1 -1 0 1;
+-1 -1 1 1;
 #X obj 81 237 sel 0;
 #X obj 288 210 netsend -u -b;
 #X obj 303 93 loadbang;
@@ -53,6 +53,23 @@
 #X obj 20 309 print disconnected from 10.0.0.8;
 #X obj 280 316 print disconnected from localhost;
 #X msg 197 40 disconnect;
+#X obj 595 197 netsend -u -b;
+#X obj 610 79 loadbang;
+#X obj 621 260 spigot;
+#X obj 664 234 tgl 15 0 empty empty auto_reconnect 17 7 0 10 -262144
+-1 -1 1 1;
+#X obj 608 224 sel 0;
+#X obj 547 296 print disconnected from 10.0.0.8;
+#X msg 610 154 connect 10.0.0.14 8000;
+#X obj 855 197 netsend -u -b;
+#X obj 870 79 loadbang;
+#X obj 881 260 spigot;
+#X obj 924 234 tgl 15 0 empty empty auto_reconnect 17 7 0 10 -262144
+-1 -1 1 1;
+#X obj 868 224 sel 0;
+#X msg 870 154 connect 10.0.0.7 8000;
+#X msg 973 130 disconnect;
+#X obj 807 296 print disconnected from 10.0.0.7;
 #X connect 0 0 5 0;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
@@ -68,21 +85,40 @@
 #X connect 10 0 8 0;
 #X connect 11 0 0 0;
 #X connect 11 0 6 0;
+#X connect 11 0 16 0;
+#X connect 11 0 23 0;
 #X connect 12 0 6 0;
 #X connect 15 0 0 0;
 #X connect 15 0 6 0;
+#X connect 15 0 16 0;
+#X connect 15 0 28 0;
+#X connect 16 0 20 0;
+#X connect 17 0 22 0;
+#X connect 18 0 21 0;
+#X connect 18 0 22 0;
+#X connect 19 0 18 1;
+#X connect 20 0 18 0;
+#X connect 22 0 16 0;
+#X connect 23 0 27 0;
+#X connect 24 0 28 0;
+#X connect 25 0 28 0;
+#X connect 25 0 30 0;
+#X connect 26 0 25 1;
+#X connect 27 0 25 0;
+#X connect 28 0 23 0;
+#X connect 29 0 23 0;
 #X restore 635 25 pd clients;
 #X obj 111 123 bng 15 250 50 0 reset-bar empty reset_bar 17 7 0 10
 -262144 -1 -1;
 #X obj 249 56 kick-onset-detector 1;
-#X obj 252 37 hsl 150 15 0 50 0 0 empty empty empty -2 -8 0 10 -204800
--1 -1 5631 1;
+#X obj 252 37 hsl 150 15 0 100 0 0 empty empty empty -2 -8 0 10 -204800
+-1 -1 10400 1;
 #X obj 415 3 loadbang;
 #X msg 415 20 50;
 #X obj 465 109 ortho-receive;
 #X obj 465 133 * 50;
-#X obj 252 18 hsl 150 15 0 50 0 0 empty kick-onset-level empty -2 -8
-0 10 -204786 -258113 -1 4108 1;
+#X obj 252 18 hsl 150 15 0 100 0 0 empty kick-onset-level empty -2
+-8 0 10 -204786 -258113 -1 164 1;
 #X connect 2 0 9 0;
 #X connect 4 0 11 0;
 #X connect 7 0 14 0;

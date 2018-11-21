@@ -1,27 +1,32 @@
-#N canvas 453 51 838 353 10;
-#X obj 549 44 loadbang;
-#X msg 549 68 connect localhost 9000;
-#X msg 597 103 disconnect;
-#X obj 604 201 sel 0;
-#X obj 640 163 tgl 15 0 empty empty auto_reconnect 17 7 0 10 -262144
--1 -1 1 1;
-#X obj 41 65 tanzmaus2osc;
-#X obj 326 163 netsend -u -b;
+#N canvas 134 122 538 360 10;
+#X obj 359 14 loadbang;
+#X msg 359 88 connect localhost 9000;
+#X msg 359 123 disconnect;
+#X obj 154 201 sel 0;
+#X obj 234 201 tgl 15 0 empty empty auto_reconnect 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 71 35 tanzmaus2osc;
+#X obj 154 160 netsend -u -b;
 #X text 43 176 Outgoing:;
-#X obj 45 260 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 43 270 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 44 202 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 43 202 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 47 284 ortho2osc 1 1;
-#X obj 211 58 bsp2osc 1;
-#X obj 221 218 ctlin;
-#X obj 45 222 op2osc 15;
+#X obj 43 300 ortho2osc 1 1;
+#X obj 241 35 bsp2osc 1;
+#X obj 43 232 op2osc 15;
+#X obj 154 243 spigot;
+#X obj 403 49 r auto-reconnect;
+#X obj 154 300 s auto-reconnect;
 #X connect 0 0 1 0;
 #X connect 1 0 6 0;
 #X connect 2 0 6 0;
-#X connect 3 0 4 0;
+#X connect 3 0 13 0;
+#X connect 4 0 13 1;
 #X connect 5 0 6 0;
 #X connect 6 0 3 0;
 #X connect 8 0 10 0;
-#X connect 9 0 13 0;
+#X connect 9 0 12 0;
 #X connect 11 0 6 0;
+#X connect 13 0 15 0;
+#X connect 14 0 1 0;
