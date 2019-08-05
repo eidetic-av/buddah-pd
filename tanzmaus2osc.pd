@@ -1,4 +1,4 @@
-#N canvas 0 50 502 573 10;
+#N canvas 553 154 502 262 10;
 #X obj 24 24 m2o 60 tanzmaus/kick;
 #X obj 71 51 m2o 61 tanzmaus/snare;
 #X obj 97 78 m2o 62 tanzmaus/rimshot;
@@ -7,7 +7,7 @@
 #X obj 216 48 m2o 65 tanzmaus/sample1;
 #X obj 345 15 m2o 68 tanzmaus/sample2;
 #X obj 275 75 c2o 84 tanzmaus/sample1/pitch;
-#X obj 163 514 outlet;
+#X obj 186 190 outlet;
 #X connect 0 0 8 0;
 #X connect 1 0 8 0;
 #X connect 2 0 8 0;
